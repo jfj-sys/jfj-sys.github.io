@@ -54,7 +54,7 @@ body {
 
 .logo {
     flex: 0.6;
-    background-image: url(images/logo.png);
+    background-image: url("https://github.com/jfj-sys/images/blob/main/logo.png" );
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 6px;
@@ -102,7 +102,7 @@ body {
     height: 500px;
     margin-left: 90px;
     margin-right: 90px;
-    background-image: url(uploads/banner1.png);
+    background-image: url("https://github.com/jfj-sys/images/blob/main/banner1.png" );
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -350,4 +350,5 @@ body {
 
 .topic {
     flex: 1
+
 }
