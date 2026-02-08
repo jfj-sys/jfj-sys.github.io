@@ -1,0 +1,353 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    height: 52px;
+    background-color: #333333;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.empty {
+    flex: 1;
+}
+
+.fast-nav {
+    flex: 1;
+}
+
+.fast-ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+.fast-ul li {
+    flex: 1;
+
+}
+
+.fast-ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.fast-ul li:first-child a {
+    color: #70aa96
+}
+
+.nav {
+    height: 88px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    flex: 0.6;
+    background-image: url(images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-left: 90px;
+}
+
+.nav ul {
+    flex: 2.5;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    line-height: 56px;
+}
+
+.nav ul li a:hover {
+    color: #70aa96;
+}
+
+.search {
+    flex: 0.6;
+    height: 24px;
+    margin-top: 32px;
+    margin-left: 20px;
+    border: white;
+    border-bottom: gray 1px solid;
+}
+
+.cart {
+    flex: 0.3;
+}
+
+.banner {
+    height: 500px;
+    background-color: #F5F5F5;
+}
+
+.background {
+    height: 500px;
+    margin-left: 90px;
+    margin-right: 90px;
+    background-image: url(uploads/banner1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.banner-nav {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 240px;
+    background-color: rgba(0, 0, 0, 0.42);
+    /* float: left; */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-nav li {
+    flex: 1;
+}
+
+.banner-nav li a {
+
+    width: 240px;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    /* border-bottom: gray 1px solid; */
+    color: white;
+    padding-left: 20px;
+}
+
+.bold {
+    font-size: large;
+}
+
+.banner-nav li:hover {
+    background-color: rgb(0, 190, 154);
+}
+
+.title1,
+.title2,
+.title3,
+.title4,
+.title5 {
+    margin-top: 40px;
+    margin-bottom: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    height: 42px;
+}
+
+.title1 h1,
+.title2 h1,
+.title3 h1,
+.title4 h1,
+.title5 h1 {
+    display: inline-block;
+}
+
+.sub-title {
+    display: inline-block;
+    margin-left: 70px;
+
+}
+
+.sentens {
+    color: rgb(167, 167, 167);
+}
+
+.sub-title a {
+    position: absolute;
+    right: 90px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(167, 167, 167);
+}
+
+.new-goods,
+.hot-recommendation,
+.hot-brands,
+.fresh-food,
+.newest-topic {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    margin-left: 90px;
+    margin-right: 90px;
+
+}
+
+.goods,
+.recommendation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 10px;
+}
+
+.goods-name {
+    flex: 1;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+    background-color: rgb(238, 249, 244);
+}
+
+.price {
+    flex: 1;
+    font-size: 16px;
+    text-align: center;
+    color: red;
+    background-color: rgb(238, 249, 244);
+}
+
+.recommend-name {
+    font-size: 24px;
+    text-align: center;
+    color: #333333;
+}
+
+.recommend-sentence {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(167, 167, 167);
+}
+
+.title3 {
+    background-color: rgb(245, 245, 245);
+}
+
+.hot-brands {
+    background-color: rgb(245, 245, 245);
+    height: 350px;
+}
+
+.title4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title4 h1 {
+    display: inline-block;
+    flex: 2.5;
+}
+
+.sub-title4 {
+    flex: 1.5;
+    margin-right: 50px;
+}
+
+.sub-title4 ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.sub-title4 ul li a {
+    text-decoration: none;
+    color: black;
+    text-align: end;
+}
+
+.active {
+    background-color: #00be9a;
+
+}
+
+.title4 a {
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+    flex: 0.5
+}
+
+.fresh-food {
+    height: 600px;
+}
+
+.left {
+    flex: 1;
+    margin-right: 45px;
+}
+
+.right {
+    flex: 4.5;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+
+}
+
+.up {
+    flex: 1;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.down {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.fresh {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex: 1;
+    margin-right: 40px;
+
+}
+
+.fresh img {
+    flex: 3;
+}
+
+.discription {
+    flex: 2;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+}
+
+.food-price {
+    font-size: 24px;
+    color: red;
+}
+
+
+
+.title5 div {
+    display: inline-block;
+
+}
+
+.title5 a {
+    display: inline-block;
+    margin-left: 1000px;
+
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+}
+
+.topic {
+    flex: 1
+}
