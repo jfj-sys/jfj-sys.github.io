@@ -1,0 +1,557 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.top {
+    height: 52px;
+    background-color: #333333;
+    border-radius: 8px 8px 0 0;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.empty {
+    flex: 1;
+}
+
+.fast-nav {
+    flex: 1;
+}
+
+.fast-ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+
+}
+
+.fast-ul li {
+    flex: 1;
+
+}
+
+.fast-ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+
+}
+
+.fast-ul li:first-child a {
+    color: #70aa96
+}
+
+.phone {
+    width: 10px;
+    height: 14px;
+}
+
+.nav {
+    height: 88px;
+    margin-top: 22px;
+    margin-bottom: 22px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.logo {
+    flex: 0.6;
+    background-image: url("images/logo.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 6px;
+    margin-left: 90px;
+}
+
+.nav ul {
+    flex: 2.5;
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 16px;
+    line-height: 56px;
+}
+
+.nav ul li a:hover {
+    color: #70aa96;
+}
+
+.search {
+    flex: 0.6;
+    height: 24px;
+    margin-top: 32px;
+    margin-left: 20px;
+    border: white;
+    border-bottom: gray 1px solid;
+}
+
+.cart {
+    flex: 0.3;
+}
+
+.banner {
+    height: 500px;
+    background-color: #F5F5F5;
+}
+
+.background {
+    height: 500px;
+    margin-left: 90px;
+    margin-right: 90px;
+    background-image: url("uploads/banner1.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+.banner-nav {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 240px;
+    background-color: rgba(0, 0, 0, 0.42);
+    /* float: left; */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.banner-nav li {
+    flex: 1;
+}
+
+.banner-nav li a {
+
+    width: 240px;
+    text-decoration: none;
+    height: 50px;
+    line-height: 50px;
+    /* border-bottom: gray 1px solid; */
+    color: white;
+    padding-left: 20px;
+}
+
+.bold {
+    font-size: large;
+}
+
+.banner-nav li:hover {
+    background-color: rgb(0, 190, 154);
+}
+
+.title1,
+.title2,
+.title3,
+.title4,
+.title5 {
+    padding-top: 40px;
+    padding-bottom: 30px;
+    margin-left: 90px;
+    margin-right: 90px;
+    height: 42px;
+}
+
+.title1 h1,
+.title2 h1,
+.title3 h1,
+.title4 h1,
+.title5 h1 {
+    display: inline-block;
+}
+
+.sub-title {
+    display: inline-block;
+    margin-left: 70px;
+
+}
+
+.sentens {
+    color: rgb(167, 167, 167);
+}
+
+.sub-title a {
+    position: absolute;
+    right: 90px;
+    text-decoration: none;
+    text-align: center;
+    color: rgb(167, 167, 167);
+}
+
+.new-goods,
+.hot-recommendation,
+.hot-brands,
+.fresh-food,
+.newest-topic {
+    display: flex;
+    justify-content: space-between;
+    height: 400px;
+    margin-left: 90px;
+    margin-right: 90px;
+
+}
+
+.goods,
+.recommendation {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    margin-right: 10px;
+}
+
+.goods-name {
+    flex: 1;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+    background-color: rgb(238, 249, 244);
+}
+
+.price {
+    flex: 1;
+    font-size: 16px;
+    text-align: center;
+    color: red;
+    background-color: rgb(238, 249, 244);
+}
+
+.recommend-name {
+    font-size: 24px;
+    text-align: center;
+    color: #333333;
+}
+
+.recommend-sentence {
+    font-size: 16px;
+    text-align: center;
+    color: rgb(167, 167, 167);
+}
+
+.title3 {
+    background-color: rgb(245, 245, 245);
+
+}
+
+.hot-brands {
+    background-color: rgb(245, 245, 245);
+    height: 350px;
+}
+
+.title4 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.title4 h1 {
+    display: inline-block;
+    flex: 2.5;
+}
+
+.sub-title4 {
+    flex: 1.5;
+    margin-right: 50px;
+}
+
+.sub-title4 ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.sub-title4 ul li a {
+    text-decoration: none;
+    color: black;
+    text-align: end;
+}
+
+.active {
+    background-color: #00be9a;
+
+}
+
+.title4 a {
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+    flex: 0.5
+}
+
+.fresh-food {
+    height: 670px;
+}
+
+.left {
+    flex: 1;
+    margin-right: 45px;
+
+
+}
+
+.right {
+    flex: 4.5;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+    height: 100%;
+
+}
+
+.up,
+.down {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    height: 50%;
+
+}
+
+
+.fresh {
+    display: flex;
+    flex-direction: column;
+    align-content: space-around;
+    flex: 1;
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    position: relative;
+    /* 新增：定位参考 */
+    overflow: hidden;
+
+
+
+}
+
+/* 2. 定义 cover 层默认样式（隐藏在盒子底部）+ 过渡动画 */
+.fresh .cover {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    /* 初始在底部，但向下位移 100% 隐藏 */
+    width: 100%;
+    height: 33%;
+    background-color: #00be9a;
+    color: white;
+    display: flex;
+    /* 让文字居中 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* 核心：默认向下位移 100%（完全隐藏），添加过渡动画 */
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+    /* 0.3秒过渡，可调整速度 */
+}
+
+/* 3. 悬浮时 cover 层向上移动（回到原位置） */
+.fresh:hover .cover {
+    transform: translateY(0);
+    /* 位移归0，显示在底部 */
+}
+
+/* 4. 保留原有悬浮边框样式 */
+.fresh:hover {
+    border: 2px solid #00be9a;
+}
+
+
+
+.fresh img {
+    flex: 3;
+    max-height: 60%;
+    padding: 20px 20px 20px 20px;
+}
+
+.discription {
+    flex: 2;
+    font-size: 16px;
+    text-align: center;
+    color: #333333;
+}
+
+.food-price {
+    font-size: 18px;
+    color: red;
+}
+
+
+
+.title5 div {
+    display: inline-block;
+
+}
+
+.title5 a {
+    display: inline-block;
+    margin-left: 1000px;
+
+    text-decoration: none;
+    color: rgb(167, 167, 167);
+}
+
+.newest-topic {
+    height: 300px;
+}
+
+.topic {
+    flex: 1;
+    position: relative;
+}
+
+.topic .cover {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    left: 0;
+    bottom: 10px;
+    height: 33%;
+    width: 100%;
+    background-image: linear-gradient(180deg, rgba(137, 137, 137, 0.00) 0%, rgba(0, 0, 0, 0.90) 100%);
+    color: white;
+}
+
+.cover .left {
+    flex: 4;
+
+}
+
+.cover .right {
+    flex: 1.5;
+    height: 26px;
+    width: 80px;
+    margin-right: 30px;
+    color: #aa2113;
+    background-color: white;
+}
+
+/* 底部 */
+.footer {
+    height: 580px;
+    background-color: #F5F5F5;
+}
+
+/* 服务 */
+.service {
+    padding: 60px 0;
+    height: 178px;
+    border-bottom: 1px solid #E8E8E8;
+}
+
+.service ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.service li {
+    display: flex;
+    width: 190px;
+    height: 58px;
+    /* background-color: pink; */
+}
+
+.service li h5 {
+    margin-right: 20px;
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/sprite.png);
+}
+
+.service li p {
+    font-size: 28px;
+    line-height: 58px;
+}
+
+.service li:nth-child(2) h5 {
+    background-position: 0 -58px;
+}
+
+.service li:nth-child(3) h5 {
+    background-position: 0 -116px;
+}
+
+.service li:nth-child(4) h5 {
+    background-position: 0 -174px;
+}
+
+/* 帮助中心 */
+.help {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 60px;
+    height: 300px;
+    /* background-color: pink; */
+}
+
+/* left */
+.help .left {
+    display: flex;
+}
+
+.help .left dl {
+    margin-right: 84px;
+}
+
+.help .left dl:last-child {
+    margin-right: 0;
+}
+
+.help .left dt {
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.help .left dd {
+    margin-bottom: 10px;
+}
+
+.help .left a {
+    color: #969696;
+}
+
+.help .left .iconfont {
+    color: #5EB69C;
+}
+
+/* right */
+.help .right ul {
+    display: flex;
+}
+
+.help .right li:first-child {
+    margin-right: 55px;
+}
+
+.help .right .pic {
+    margin-bottom: 10px;
+    width: 120px;
+    height: 120px;
+}
+
+.help .right p {
+    color: #969696;
+    text-align: center;
+}
+
+/* 版权 */
+.copyright {
+    text-align: center;
+}
+
+.copyright p {
+    margin-bottom: 10px;
+    color: #A1A1A1;
+}
+
+.copyright p a {
+    margin: 0 10px;
+    color: #A1A1A1;
+}
