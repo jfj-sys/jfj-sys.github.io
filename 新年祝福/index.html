@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 马年快乐</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .background {
+            width: 100%;
+            height: 780px;
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dialog {
+            position: fixed;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transform: scale(0.5);
+            animation: popIn 0.5s forwards, floatUp 4s ease-in forwards;
+
+        }
+
+        @keyframes popIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-content,
+        .dialog-congratulations {
+            background: linear-gradient(to right, #f89d9d, #f6e68c);
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
+
+        .modal-content img {
+            width: 18px;
+            height: 18px;
+        }
+
+        .dialog-congratulations img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .btn {
+            width: 70px;
+            height: 30px;
+            padding: 0px 20px;
+            margin-left: 40%;
+            display: block;
+            border-radius: 10px;
+            border: 1px solid #f6e68c;
+            background-color: #f89d9d;
+            transition: all 0.3s ease;
+
+        }
+
+        .btn:hover {
+            transform: scale(1.1);
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .close:hover {
+            color: black;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="background">
+
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h4><img src="iconfont/liwu.png" alt=""> 新年礼物</h4>
+            <p>您有一份春节礼物，确定要打开吗？</p>
+            <button class="btn">打开</button>
+        </div>
+    </div>
+    <script>
+
+        const closeBtns = document.querySelectorAll('.close');
+        const open = document.querySelector('.btn');
+        const dialogs = document.querySelectorAll('.dialog');
+        const congratulations = [
+            "以梦为马，笔锋所至，皆是心之所向，马年金榜题名。",
+            "策马书山，乘风破浪，愿你逢考必过，前程一马平川。",
+            "龙马精神，勤学不辍，祝学业突飞猛进，考场马到成功。",
+            "才思敏捷，倚马可待，愿你智慧如泉，解题如流，高分稳拿。",
+            "马跃龙门，步步高升，祝升学顺利，踏入理想学府大门。",
+            "一马当先，独占鳌头，愿你在知识的旷野上，驰骋自如。",
+            "马年追梦，未来可期，祝你所有努力，都变成满意的答卷。",
+            "书山有路，策马前行，愿你研途顺利，一战成硕，圆梦 2026。",
+            "智慧如马，奔腾不息，祝逻辑清晰，代码无 Bug，考试全满分。",
+            "不负韶华，马上成才，愿你学有所成，不负十年寒窗苦读。",
+            "马年大吉，万事顺遂，愿 2026 一路生花，前程似锦。",
+            "龙马精神，马到成功，祝你新年快乐，阖家幸福安康。",
+            "金马迎春，喜气洋洋，愿好运相伴，财源滚滚而来。",
+            "策马奔腾，鹏程万里，祝 2026 行而不辍，未来可期。",
+            "马年纳福，吉星高照，愿所求皆如愿，所行皆坦途。",
+            "一马当先，万象更新，祝你新年胜旧年，欢愉且胜意。",
+            "马蹄声声，踏碎旧岁，愿新年新气象，万事皆圆满。",
+            "马年鸿运，势不可挡，祝财运亨通，福气满满当当。",
+            "瑞马送福，四季平安，愿你岁岁常欢愉，年年皆胜意。",
+            "策马扬鞭，奔赴美好，祝 2026 日子滚烫，快乐漫长。",
+            "马年呈祥，五福临门，愿家门兴旺，万事顺心顺意。",
+            "万马奔腾，盛世华章，祝祖国繁荣昌盛，阖家幸福安康。",
+            "马不停蹄，奔赴山海，愿你眼里有光，心中有暖，脚下有力。",
+            "金马贺岁，福满人间，祝你新年大吉，万事胜意连连。",
+            "一马平川，前程似锦，愿你 2026 路路畅通，事事圆满。",
+            "马蹄踏春，花开富贵，祝新岁财源广进，生活锦上添花。",
+            "马年好运，如期而至，愿你抓住机遇，成就更好的自己。",
+            "策马迎新，岁月安暖，愿你一生被爱，一生可爱。",
+            "瑞马迎春，万象更新，祝旧疾当愈，新岁长安，万事顺遂。",
+            "马年大吉，百无禁忌，愿你快乐无边，好运无限。",
+            "龙马精神，活力满满，祝 2026 身体健康，精力充沛如骏马。",
+            "马到功成，心想事成，愿你所有梦想，都在这个马年绽放。",
+            "策马前行，风雨无阻，祝 2026 不畏艰难，终达理想彼岸。",
+            "金马送喜，喜气盈门，愿全家团圆美满，日子红红火火。",
+            "一马当先，蒸蒸日上，祝事业生活，都如骏马奔腾向上。",
+            "马年纳吉，平安喜乐，愿你平淡日子里，也有星辰大海。",
+            "马蹄声声，好运连连，祝你新年新气象，万事开门红。",
+            "策马追梦，未来可期，愿你 2026 不负光阴，不负自己。",
+            "瑞马踏雪，吉祥如意，祝新年烦恼清零，快乐加倍满分。",
+            "马年鸿运，当头高照，愿你财运亨通，福气东来西往。",
+            "龙马呈祥，百事无忧，祝 2026 无灾无难，生活顺心顺意。",
+            "马不停蹄，奔向幸福，愿你每一步，都走在开满鲜花的路上。",
+            "金马贺春，福满乾坤，祝你新年大吉大利，万事如意。",
+            "一马当先，独占鳌头，愿你在自己的领域里，闪闪发光。",
+            "策马奔腾，潇洒自如，祝 2026 活得精彩，过得自在。",
+            "马年好运，接二连三，愿你好事成双，喜上加喜。",
+            "瑞马迎新，福泽深厚，愿全家安康，幸福绵长如流水。",
+            "马蹄踏歌，岁月欢歌，祝新岁笑口常开，快乐常伴左右。",
+            "策马扬鞭，再创佳绩，愿 2026 百尺竿头，更进一步。",
+            "马年大吉，福气满满，愿你眼里有星河，笑里有清风。",
+            "龙马精神，岁岁安康，祝年年有今日，岁岁有今朝，万事顺。",
+            "马到成功，前程万里，愿你鹏程展翅，翱翔于广阔天地。",
+            "策马春风，意气风发，祝 2026 朝气蓬勃，生活热气腾腾。",
+            "金马纳福，阖家欢乐，愿全家幸福美满，日子甜甜蜜蜜。",
+            "一马平川，康庄大道，祝 2026 路路顺风，事事顺心。",
+            "马年吉祥，万事亨通，愿你顺风顺水，扶摇直上九万里。",
+            "瑞马踏春，生机勃勃，祝新岁万象更新，充满希望与活力。",
+            "马蹄声声，催人奋进，愿 2026 脚踏实地，收获满满当当。",
+            "策马迎新，福暖四季，愿你春有百花，秋有月，岁岁安康。",
+            "马年大吉，圆满收官，愿 2026 所有遗憾，都化作惊喜的铺垫。"
+        ];
+        let timer = null;
+        // 页面加载完成后自动显示弹窗
+        window.onload = function () {
+            document.getElementById('modal').style.display = 'flex';
+            // 关闭功能
+            document.body.addEventListener('click', function (e) {
+                // 判断点击的是close按钮
+                if (e.target.classList.contains('close')) {
+                    // 找到按钮所属的弹窗（modal或dialog）
+                    const popup = e.target.closest('.modal, .dialog');
+                    if (popup) {
+                        // 静态modal：隐藏；动态dialog：删除（更合理）
+                        if (popup.classList.contains('modal')) {
+                            popup.style.display = 'none';
+                        } else {
+                            popup.remove(); // 修复：正确调用DOM的remove方法
+                        }
+                    }
+                }
+            });
+        }
+
+
+        // 创建弹窗
+        function creatdialog() {
+            const dialog = document.createElement('div');
+            dialog.classList.add('dialog');
+            dialog.innerHTML = `
+                <div class="dialog-congratulations">
+                    <span class="close">&times;</span>
+                    <h4><img src="iconfont/zhufu-.png" alt=""> 提示</h4>
+                    <p>${congratulations[Math.floor(Math.random() * congratulations.length)]}</p>    `;
+            const x = Math.random() * (window.innerWidth - 400);
+            const y = Math.random() * (window.innerHeight - 200);
+            dialog.style.top = y + 'px';
+            dialog.style.left = x + 'px';
+            document.body.appendChild(dialog);
+
+
+        }
+
+        open.onclick = function () {
+
+            //设定时器
+            if (timer) {
+                clearInterval(timer);
+            }
+            timer = setInterval(creatdialog, 1000);
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
