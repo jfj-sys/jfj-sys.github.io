@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>2026 马年快乐</title>
     <style>
         body {
@@ -12,7 +12,7 @@
         }
 
         .background {
-            width: 100%;
+            width: 100vw;
             height: 780px;
             background-image: url("background.jpg");
             background-repeat: no-repeat;
@@ -25,15 +25,15 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
+            width: 100vw;
+            height: 100vh;
             justify-content: center;
             align-items: center;
         }
 
         .dialog {
             position: fixed;
-            width: 100%;
+            width: 85vw;
             height: auto;
             opacity: 0;
             transform: scale(0.5);
@@ -51,10 +51,10 @@
         .modal-content,
         .dialog-congratulations {
             background: linear-gradient(to right, #f89d9d, #f6e68c);
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 400px;
-            width: 90%;
+            padding: 1rem;
+            border-radius: 10px;
+            max-width: 300px;
+            width: 90vw;
             position: relative;
         }
 
@@ -68,10 +68,18 @@
             height: 20px;
         }
 
+        .modal-content img,
+        .dialog-congratulations img {
+            vertical-align: middle;
+            /* 图标和文字对齐 */
+            margin-right: 0.5rem;
+            /* 增加间距，适配移动端 */
+        }
+
         .btn {
             width: 70px;
             height: 30px;
-            padding: 0px 20px;
+            padding: 0rem 1.2rem;
             margin-left: 40%;
             display: block;
             border-radius: 10px;
@@ -87,12 +95,21 @@
 
         .close {
             position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
+            top: 0.8rem;
+            right: 1rem;
+            font-size: 1.8rem;
+            /* 适配移动端字体大小 */
             font-weight: bold;
             color: #aaa;
+            /* 加深颜色，更易识别 */
             cursor: pointer;
+            touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            /* 居中，方便点击 */
         }
 
         .close:hover {
