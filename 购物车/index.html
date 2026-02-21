@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        tbody {
+            text-align: center;
+        }
+
+        tbody tr {
+            border: #f2f2f2 solid 1px;
+        }
+
+        tbody tr td {
+            width: 16%;
+        }
+
+        tbody tr td img {
+            width: 50px;
+            height: 50px;
+        }
+
+        tbody tr td span {
+            display: inline-block;
+            width: 25px;
+            text-align: center;
+
+        }
+
+        tfoot {
+            position: relative;
+            height: 50px;
+            border: #f2f2f2 solid 1px;
+        }
+
+        tfoot span {
+            display: inline-block;
+            position: absolute;
+            right: 90px;
+            top: 10px;
+
+        }
+
+        tfoot button {
+            position: absolute;
+            right: 20px;
+            top: 10px;
+            width: 60px;
+            height: 30px;
+            align-items: center;
+            background-color: #409eff;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .empty {
+            height: 80px;
+        }
+
+        .empty td {
+            text-align: center;
+            vertical-align: middle;
+            font-size: large;
+            line-height: 80px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="app">
+        <div class="banner"></div>
+        <div class="breadcrumb">
+            <span>🏠</span>
+            /
+            <span>购物车</span>
+        </div>
+        <div class="cart-content">
+            <table>
+                <thead>
+                    <tr>
+                        <th>选中</th>
+                        <th>图片</th>
+                        <th>单价</th>
+                        <th>个数</th>
+                        <th>小计</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in objs" :key="item.id">
+                        <td><input type="checkbox" v-model="item.isChecked"></td>
+                        <td><img :src="item.url" alt=""></td>
+                        <td>{{item.price}}</td>
+                        <td><button :disabled="item.num <= 1"
+                                @click="item.num--">-</button><span>{{item.num}}</span><button
+                                @click="item.num++">+</button></td>
+                        <td>{{item.price * item.num}}</td>
+                        <td><button @click="deleteItem(item.id)">删除</button></td>
+                    </tr>
+                </tbody>
+                <tfoot v-if="hasGoods">
+                    <tr>
+                        <td>
+                            <input type="checkbox" v-model="isAll">全选
+                        </td>
+                        <td colspan="2"><span>总价：{{totalPrice}}￥</span>
+                            <button>结算({{totalCount}})</button>
+                        </td>
+                    </tr>
+                </tfoot>
+                <tfoot v-else class="empty">
+                    <tr>
+                        <td colspan="6">🛒空空如也</td>
+                    </tr>
+                </tfoot>
+
+
+            </table>
+
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script>
+        // const defalt = [];
+        const app = new Vue({
+            el: '#app',
+            data: {
+                // objs: [
+                //     { id: 1, url: 'images/火龙果.png', price: 6, num: 1, isChecked: false },
+                //     { id: 2, url: 'images/荔枝.png', price: 8, num: 1, isChecked: false },
+                //     { id: 3, url: 'images/榴莲.png', price: 10, num: 1, isChecked: false },
+                //     { id: 4, url: 'images/鸭梨.png', price: 5, num: 1, isChecked: false },
+                //     { id: 5, url: 'images/樱桃.png', price: 4, num: 1, isChecked: false }
+                // ]
+                objs: JSON.parse(localStorage.getItem('list')) || []
+
+            },
+            methods: {
+                deleteItem(id) {
+                    this.objs = this.objs.filter(item => item.id !== id);
+                }
+
+
+            },
+            computed: {
+                totalPrice: function () {
+                    return this.objs.reduce((total, item) => {
+                        if (item.isChecked) {
+                            return total + item.num * item.price;
+                        } else {
+                            return total;
+                        }
+
+                    }, 0)
+                },
+                totalCount: function () {
+                    return this.objs.reduce((total, item) => {
+                        if (item.isChecked) {
+                            return total + item.num;
+                        } else {
+                            return total;
+                        }
+
+                    }, 0);
+
+
+                },
+                hasGoods() {
+                    return this.objs.length > 0;
+                },
+                isAll: {
+                    get() {
+
+                        return this.hasGoods && this.objs.every(item => item.isChecked);
+                    },
+                    set(value) {
+                        this.objs.forEach(item => item.isChecked = value);
+                    }
+
+
+                }
+
+            },
+            watch: {
+                objs: {
+                    deep: true,
+                    handler(newValue) {
+                        localStorage.setItem('list', JSON.stringify(newValue));
+                    }
+                }
+            }
+        })
+
+    </script>
+
+
+</body>
+
+</html>
