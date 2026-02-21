@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="index.css">
     <title>Document</title>
     <style>
+
+         .banner {
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 20px;
+            background-image: url('images/fruit.jpg');
+            background-size: cover;
         table {
             width: 50%;
             margin: 0 auto;
@@ -141,14 +149,14 @@
         const app = new Vue({
             el: '#app',
             data: {
-                // objs: [
-                //     { id: 1, url: 'images/火龙果.png', price: 6, num: 1, isChecked: false },
-                //     { id: 2, url: 'images/荔枝.png', price: 8, num: 1, isChecked: false },
-                //     { id: 3, url: 'images/榴莲.png', price: 10, num: 1, isChecked: false },
-                //     { id: 4, url: 'images/鸭梨.png', price: 5, num: 1, isChecked: false },
-                //     { id: 5, url: 'images/樱桃.png', price: 4, num: 1, isChecked: false }
-                // ]
-                objs: JSON.parse(localStorage.getItem('list')) || []
+                objs: [
+                    { id: 1, url: 'images/火龙果.png', price: 6, num: 1, isChecked: false },
+                    { id: 2, url: 'images/荔枝.png', price: 8, num: 1, isChecked: false },
+                    { id: 3, url: 'images/榴莲.png', price: 10, num: 1, isChecked: false },
+                    { id: 4, url: 'images/鸭梨.png', price: 5, num: 1, isChecked: false },
+                    { id: 5, url: 'images/樱桃.png', price: 4, num: 1, isChecked: false }
+                ]
+                // objs: JSON.parse(localStorage.getItem('list')) || []
 
             },
             methods: {
@@ -211,5 +219,6 @@
 
 
 </body>
+
 
 </html>
